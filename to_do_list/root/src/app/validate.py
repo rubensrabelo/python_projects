@@ -44,9 +44,9 @@ class Validate():
             ValueError: If the name is empty.
         """
         if not isinstance(name, str):
-            raise TypeError("Error - name must be a string.")
+            raise TypeError("Name must be a string.")
         if not name:
-            raise ValueError("Error - name cannot be empty.")
+            raise ValueError("Name cannot be empty.")
 
     @staticmethod
     def validate_status(status):
@@ -61,9 +61,9 @@ class Validate():
             ValueError: If the status is not within the specified range.
         """
         if not isinstance(status, int):
-            raise TypeError("Error - status must be an integer.")
+            raise TypeError("Status must be an integer.")
         if not status in range(3):
-            raise ValueError("Error - status must be in the range from 0 to 2.")
+            raise ValueError("Status must be in the range from 0 to 2.")
         
     @staticmethod
     def validate_index(list_user, index):
