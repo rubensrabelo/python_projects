@@ -1,5 +1,5 @@
 from datetime import datetime
-from validate import Validate
+from utils.validate import Validate
 
 
 class Task():

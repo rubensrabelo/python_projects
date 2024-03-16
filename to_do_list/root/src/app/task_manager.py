@@ -1,5 +1,5 @@
 from task import Task
-from validate import Validate
+from utils.validate import Validate
 
 
 class Task_manager():
