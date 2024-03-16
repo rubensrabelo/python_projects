@@ -24,6 +24,14 @@ class Validate():
             raise TypeError("Error - status must be an integer.")
         if not status in range(3):
             raise ValueError("Error - status must be in the range from 0 to 2.")
+        
+    @staticmethod
+    def validate_index(list_user, index):
+        try:
+            list_user[index]
+            return True
+        except IndexError:
+            return False
 
 
 if __name__ == "__main__":
