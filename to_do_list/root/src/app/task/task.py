@@ -36,8 +36,11 @@ class Task():
         Validate.validate_name(name)
         Validate.validate_status(status)
         
-        self.date_str = date
-        self.date = datetime.strptime(date, "%d/%m/%Y").date()
+        self.date_str_conclusion = date
+
+        # Alert: I have to test if the user change correct the date
+
+        self.date_conclusion = datetime.strptime(date, "%d/%m/%Y").date()
         self.name = name
         self.status = status
 
@@ -48,7 +51,7 @@ class Task():
         Returns:
             str: Uma string contendo a data, o nome e o status da tarefa.
         """
-        return f"Date: {self.date_str}, Name: {self.name}, Status: {self.status}"
+        return f"Date: {self.date_str_conclusion}, Name: {self.name}, Status: {self.status}"
 
     def __repr__(self) -> str:
         """
@@ -57,7 +60,9 @@ class Task():
         Returns:
             str: Uma string contendo a data, o nome e o status da tarefa.
         """
-        return f"Task(Date: {self.date_str}, Name: {self.name}, Status: {self.status})"
+        return f"Task(Date: {self.date_str_conclusion}, Name: {self.name}, Status: {self.status})"
 
 if __name__ == "__main__":
     ...
+
+    
