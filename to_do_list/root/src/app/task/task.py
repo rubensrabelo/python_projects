@@ -1,4 +1,7 @@
+import sys
+sys.path.append("/to_do_list/root/src/utils/")
 from datetime import datetime
+
 from utils.validate import Validate
 
 
@@ -63,6 +66,6 @@ class Task():
         return f"Task(Date: {self.date_str_conclusion}, Name: {self.name}, Status: {self.status})"
 
 if __name__ == "__main__":
-    ...
+    task = Task("01/01/2022", "tarefa 01")
 
     
