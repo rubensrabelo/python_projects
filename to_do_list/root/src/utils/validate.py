@@ -2,26 +2,26 @@ from datetime import datetime
 
 class Validate():
     """
-    A utility class for data validation.
+    Uma classe utilitária para validação de dados.
 
-    This class provides static methods to validate various types of data, such as dates, names, status, and list indices.
+    Esta classe fornece métodos estáticos para validar vários tipos de dados, como datas, nomes, status e índices de listas.
 
-    Methods:
-        validate_date(date_str): Validate if a string represents a date in the correct format.
-        validate_name(name): Validate if the name is a non-empty string.
-        validate_status(status): Validate if the status is an integer within the range [0, 2].
-        validate_index(list_user, index): Validate if the index is within the bounds of the list.
+    Métodos:
+        validar_data(data_str): Valida se uma string representa uma data no formato correto.
+        validar_nome(nome): Valida se o nome é uma string não vazia.
+        validar_status(status): Valida se o status é um inteiro dentro do intervalo [0, 2].
+        validar_indice(lista_usuario, indice): Valida se o índice está dentro dos limites da lista.
     """
     @staticmethod
     def validate_date(date_str):
         """
-        Validate if a string represents a date in the correct format.
+        Valida se uma string representa uma data no formato correto.
 
         Args:
-            date_str (str): The string containing the date to validate.
+            data_str (str): A string contendo a data a ser validada.
 
         Returns:
-            bool: True if the date is valid, False otherwise.
+            bool: True se a data for válida, False caso contrário.
         """
         try:
             datetime.strptime(date_str, "%d/%m/%Y")
@@ -34,14 +34,14 @@ class Validate():
     @staticmethod
     def validate_name(name):
         """
-        Validate if the name is a non-empty string.
+        Valida se o nome é uma string não vazia.
 
         Args:
-            name (str): The name to validate.
+            nome (str): O nome a ser validado.
 
         Raises:
-            TypeError: If the name is not a string.
-            ValueError: If the name is empty.
+            TypeError: Se o nome não for uma string.
+            ValueError: Se o nome estiver vazio.
         """
         if not isinstance(name, str):
             raise TypeError("Name must be a string.")
@@ -51,14 +51,14 @@ class Validate():
     @staticmethod
     def validate_status(status):
         """
-        Validate if the status is an integer within the range [0, 2].
+        Valida se o status é um inteiro dentro do intervalo [0, 2].
 
         Args:
-            status (int): The status to validate.
+            status (int): O status a ser validado.
 
         Raises:
-            TypeError: If the status is not an integer.
-            ValueError: If the status is not within the specified range.
+            TypeError: Se o status não for um inteiro.
+            ValueError: Se o status não estiver dentro do intervalo especificado.
         """
         if not isinstance(status, int):
             raise TypeError("Status must be an integer.")
@@ -68,21 +68,17 @@ class Validate():
     @staticmethod
     def validate_index(list_user, index):
         """
-        Validate if the index is within the bounds of the list.
+        Valida se o índice está dentro dos limites da lista.
 
         Args:
-            list_user (list): The list to validate.
-            index (int): The index to validate.
+            lista_usuario (list): A lista a ser validada.
+            indice (int): O índice a ser validado.
 
         Returns:
-            bool: True if the index is valid, False otherwise.
+            bool: True se o índice for válido, False caso contrário.
         """
         try:
             list_user[index]
             return True
         except IndexError:
             return False
-
-
-if __name__ == "__main__":
-    ...
